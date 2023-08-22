@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>&#x30a2;&#x30af;&#x30a8;&#x30c7;&#x30a3;4&#x62e1;&#x5f35; &#x5909;&#x6570;&#x540d;CSV&#x51fa;&#x529b;&#x30c4;&#x30fc;&#x30eb;</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="アクエディ4拡張-変数名csv出力ツール-">アクエディ4拡張 変数名CSV出力ツール <!-- omit in toc --></h1>
+<h2 id="目次-">目次 <!-- omit in toc --></h2>
+<ul>
+<li><a href="#%E6%A6%82%E8%A6%81">概要</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">使用方法</a>
+<ul>
+<li><a href="#%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89">ダウンロード</a></li>
+<li><a href="#%E8%A7%A3%E5%87%8D">解凍</a></li>
+<li><a href="#%E3%82%B9%E3%83%86%E3%83%BC%E3%82%B8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E8%AA%AD%E8%BE%BC">ステージファイル読込</a>
+<ul>
+<li><a href="#gui%E3%81%AE%E5%A0%B4%E5%90%88">GUIの場合</a></li>
+<li><a href="#%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%81%AE%E5%A0%B4%E5%90%88">コマンドプロンプトの場合</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#%E5%8B%95%E4%BD%9C%E7%92%B0%E5%A2%83">動作環境</a></li>
+<li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85">注意事項</a></li>
+<li><a href="#%E3%82%B9%E3%83%9A%E3%82%B7%E3%83%A3%E3%83%AB%E3%82%B5%E3%83%B3%E3%82%AF%E3%82%B9">スペシャルサンクス</a></li>
+<li><a href="#%E4%BD%9C%E8%80%85">作者</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E5%B1%A5%E6%AD%B4">更新履歴</a></li>
+</ul>
+<h2 id="概要">概要</h2>
+<ul>
+<li>本ソフトはアントン様制作の「アクションエディター4」(現在は公式配布終了)のエディター内で使用する変数の管理の効率化を目指すことを目的とした、ステージ変数名の一覧をCSVファイルに出力するためのソフトです。</li>
+<li>本ソフトを使用すると、アクションエディター4で作成されたステージファイルの変数名の一覧をCSVファイルに出力できます。</li>
+<li>出力されたCSVファイルを表計算ソフトなどに取り込むことで、アクションエディター4とは別の画面で変数名を確認することができ、変数の管理を従来より効率的に行うことが期待できます。</li>
+</ul>
+<h2 id="使用方法">使用方法</h2>
+<h3 id="ダウンロード">ダウンロード</h3>
+<ol>
+<li><a href="https://github.com/Kata-3/AE4Ex-out-csv-variable-names/tags">このリンク</a>をクリックします。</li>
+<li>ダウンロードしたいバージョンを選択します。</li>
+<li>「Source code」をクリックします。</li>
+<li>ダウンロードされるまで待ちます。</li>
+</ol>
+<h3 id="解凍">解凍</h3>
+<ol>
+<li>ダウンロードしたファイルを解凍します。
+<ul>
+<li>解凍したフォルダの中にある「AE4Ex_OutCsv_v<code>***</code>」(<code>***</code>はバージョン名(「<code>.</code>」無し))が本体です。</li>
+</ul>
+</li>
+</ol>
+<h3 id="ステージファイル読込">ステージファイル読込</h3>
+<h4 id="guiの場合">GUIの場合</h4>
+<ol>
+<li>ステージファイルを選択します。(複数選択可)</li>
+<li>本体の中にあるファイル「AE4Ex_OutCsv.exe」にドラッグ&amp;ドロップします。</li>
+</ol>
+<h4 id="コマンドプロンプトの場合">コマンドプロンプトの場合</h4>
+<ol>
+<li>実行ファイル「AE4Ex_OutCsv.exe」のパスを入力し、半角スペースを入力し、入力ファイルのパスを入力します。
+<ul>
+<li>入力ファイルが複数ある場合は、各パスの間に半角スペースを入力します。</li>
+</ul>
+</li>
+<li>Enterキーを押します。</li>
+<li>実行ファイルと同じ場所にフォルダ「out」が作成され、その中にCSVファイルが作成されるまで待ちます。
+<ul>
+<li>詳細は本体の中にある「ReadMe.txt」を参照してください。</li>
+</ul>
+</li>
+</ol>
+<h2 id="動作環境">動作環境</h2>
+<ul>
+<li>OS：Windows10</li>
+<li>端末：日本向けPC</li>
+<li>アクションエディター4のバージョン：10.20</li>
+</ul>
+<h2 id="注意事項">注意事項</h2>
+<ul>
+<li>本ソフトの使用により何らかのトラブルが発生しても作者は一切の責任を負いかねます。</li>
+<li>他のバージョンのアクションエディター4などにより作成されたファイルは対応いたしません(未定義動作となります)。</li>
+<li>本ソフトや入力ファイルのパスにマルチバイト文字列(漢字など)を含む場合、失敗する場合がございます。
+<ul>
+<li>ファイルパスにマルチバイト文字列が含まれないようにしてください。
+<ul>
+<li>相対パスで指定</li>
+<li>ファイルを移動</li>
+<li>リネーム</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="スペシャルサンクス">スペシャルサンクス</h2>
+<p>本ソフトの制作において、以下のプログラムを使用させて頂きました。</p>
+<ul>
+<li>Tatu 様
+<ul>
+<li><a href="https://tatu-oa.itch.io/ae4-file-open-code">アクエディ4のファイルを開いて表示するコード</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="作者">作者</h2>
+<ul>
+<li>作成者：かた三郎
+<ul>
+<li><a href="https://github.com/Kata-3/AE4Ex-out-csv-variable-names">本ソフトのリポジトリ</a></li>
+<li><a href="https://kata-3.github.io/">トップページ</a></li>
+<li><a href="https://twitter.com/ryu_chankyou01">X(旧Twitter)</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="更新履歴">更新履歴</h2>
+<ul>
+<li><a href="https://github.com/Kata-3/AE4Ex-out-csv-variable-names/releases/tag/Ver.1.0.0">Ver.1.0.0</a>
+<ul>
+<li>初版公開</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>
